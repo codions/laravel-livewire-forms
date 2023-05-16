@@ -15,10 +15,10 @@ class LaravelLivewireFormsProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__ . '/../../views', 'laravel-livewire-forms');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'laravel-livewire-forms');
 
         $this->publishes([
-            __DIR__ . '/../../views' => resource_path('views/vendor/laravel-livewire-forms'),
+            __DIR__ . '/../../resources/views' => resource_path('views/vendor/laravel-livewire-forms'),
         ]);
     }
 }
