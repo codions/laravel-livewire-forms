@@ -434,7 +434,7 @@ class CreateClientForm extends FormComponent
 
 ### Form View
 
-![Example Form](assets/sample-form.png)
+![Example Form](docs/images/sample-form.png)
 
 
 ### Other Examples

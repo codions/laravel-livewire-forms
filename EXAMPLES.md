@@ -51,7 +51,7 @@ class CreateClientForm extends FormComponent
 
 #### Form View
 
-![Example Form](assets/sample-form.png)
+![Example Form](docs/images/sample-form.png)
 
 
 ### FormSliderComponent Example
@@ -79,4 +79,4 @@ class CreateClientForm extends FormSliderComponent
 
 #### Form Slider View
 
-![Example Form](assets/sample-form-slider.png)
+![Example Form](docs/images/sample-form-slider.png)
