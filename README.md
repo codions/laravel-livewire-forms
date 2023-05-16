@@ -101,16 +101,8 @@ class Login extends FormSliderComponent
     public $layout = 'layouts.card';
     public $btnText = 'Login';
 
-    public function route()
-    {
-        return Route::get('/login', static::class)
-            ->name('login')
-            ->middleware('guest');
-    }
 }
 ```
-
-The `route` method is made available by using my [laravel-livewire-routes](https://github.com/bastinald/laravel-livewire-routes) package.
 
 ## Setting Initial Data
 
