@@ -21,7 +21,7 @@ class MakeFormCommand extends Command
         $template = preg_replace_array(
             ['/\[namespace\]/', '/\[class\]/', '/\[quote\]/'],
             [$parser->classNamespace(), $parser->className(), $parser->wisdomOfTheTao()],
-            $filesystem->get(__DIR__ . '/../../stubs/form.stub')
+            $filesystem->get(__DIR__ . '/../../resources/stubs/form.stub')
         );
 
         if ($filesystem->exists($parser->classPath())) {
