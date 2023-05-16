@@ -2,26 +2,26 @@
 
 namespace Codions\LaravelLivewireForms\Components;
 
-use Codions\LaravelLivewireForms\Components\Button;
-use Codions\LaravelLivewireForms\Components\FormComponent;
-use Codions\LaravelLivewireForms\Components\Input;
-use Livewire\Component;
-use Livewire\WithFileUploads;
-
-
 class ModalFormComponent extends FormComponent
 {
-
     public $program = null;
-    public $btnTitle = "Add Student";
-    public $modalTitle = "Add Student";
-    public $btnClass = "btn btn-dark ml-2 mt-sm--3";
+
+    public $btnTitle = 'Add Student';
+
+    public $modalTitle = 'Add Student';
+
+    public $btnClass = 'btn btn-dark ml-2 mt-sm--3';
+
     public $modalFormVisible = false;
+
     public $isDropdown = false;
+
     public $file = null;
+
     public $team;
 
-    public function createShowModal() {
+    public function createShowModal()
+    {
         $this->modalFormVisible = true;
     }
 

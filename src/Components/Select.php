@@ -12,9 +12,15 @@ use Illuminate\View\Component;
 
 class Select extends Component
 {
-    use WithPrefix, WithOptions, WithSizing, WithHelp, WithModel, WithDisabled;
+    use WithPrefix;
+    use WithOptions;
+    use WithSizing;
+    use WithHelp;
+    use WithModel;
+    use WithDisabled;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)

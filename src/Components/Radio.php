@@ -12,9 +12,15 @@ use Illuminate\View\Component;
 
 class Radio extends Component
 {
-    use WithPrefix, WithOptions, WithSwitch, WithHelp, WithModel, WithDisabled;
+    use WithPrefix;
+    use WithOptions;
+    use WithSwitch;
+    use WithHelp;
+    use WithModel;
+    use WithDisabled;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)

@@ -8,9 +8,11 @@ use Illuminate\View\Component;
 
 class Arrayable extends Component
 {
-    use WithHelp, WithDisabled;
+    use WithHelp;
+    use WithDisabled;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)

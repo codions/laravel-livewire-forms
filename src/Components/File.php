@@ -9,9 +9,12 @@ use Illuminate\View\Component;
 
 class File extends Component
 {
-    use WithPrefix, WithHelp, WithDisabled;
+    use WithPrefix;
+    use WithHelp;
+    use WithDisabled;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)

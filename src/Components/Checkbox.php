@@ -11,9 +11,14 @@ use Illuminate\View\Component;
 
 class Checkbox extends Component
 {
-    use WithPrefix, WithSwitch, WithHelp, WithModel, WithDisabled;
+    use WithPrefix;
+    use WithSwitch;
+    use WithHelp;
+    use WithModel;
+    use WithDisabled;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label)

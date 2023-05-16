@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class DynamicComponent extends Component
 {
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $attrs = [])

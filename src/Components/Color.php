@@ -12,9 +12,15 @@ use Illuminate\View\Component;
 
 class Color extends Component
 {
-    use WithPrefix, WithSizing, WithHelp, WithModel, WithDisabled, WithReadonly;
+    use WithPrefix;
+    use WithSizing;
+    use WithHelp;
+    use WithModel;
+    use WithDisabled;
+    use WithReadonly;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)

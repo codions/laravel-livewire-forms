@@ -39,10 +39,12 @@ trait WithModel
      *
      * @return mixed|Illuminate\View\Component    Return the current object.
      */
-    public function addAttrs(array $attrs) {
+    public function addAttrs(array $attrs)
+    {
         if (Arr::isAssoc($attrs)) {
             $this->attrs = array_merge($this->attrs, $attrs);
         }
+
         return $this;
     }
 }

@@ -9,7 +9,9 @@ use Livewire\Component;
 class FormComponent extends Component
 {
     public $title;
+
     public $layout;
+
     public $data = [];
 
     /**

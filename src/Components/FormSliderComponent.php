@@ -2,23 +2,28 @@
 
 namespace Codions\LaravelLivewireForms\Components;
 
-class FormSliderComponent extends FormComponent {
-
-
+class FormSliderComponent extends FormComponent
+{
     public $btnIcon = '';
+
     public $btnText = 'Execute';
+
     public $btnAttrs = [];
+
     public $sliderActive = false;
 
-    public function toggleSlider() {
+    public function toggleSlider()
+    {
         $this->sliderActive = ! $this->sliderActive;
     }
 
-    public function showSlider() {
+    public function showSlider()
+    {
         $this->sliderActive = true;
     }
 
-    public function hideSlider() {
+    public function hideSlider()
+    {
         $this->sliderActive = false;
     }
 
@@ -27,7 +32,4 @@ class FormSliderComponent extends FormComponent {
         return view('laravel-livewire-forms::form-slider-component')
             ->layout($this->layout ?? config('livewire.layout'));
     }
-
 }
-
-?>

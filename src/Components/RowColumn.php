@@ -9,11 +9,16 @@ use Illuminate\View\Component;
 
 class RowColumn extends Component
 {
-    use WithHelp, WithDisabled, WithPrefix;
+    use WithHelp;
+    use WithDisabled;
+    use WithPrefix;
 
     public $props = [];
+
     public $attrs = [];
-    public $column_class = "col-md-6 mb-2 mb-md-0";
+
+    public $column_class = 'col-md-6 mb-2 mb-md-0';
+
     public $row_class;
 
     public static function make($label = null)
@@ -34,8 +39,10 @@ class RowColumn extends Component
         return $component;
     }
 
-    public function col_size($col="mb-2") {
+    public function col_size($col = 'mb-2')
+    {
         $this->column_class = "$col mb-2 mb-md-0";
+
         return $this;
     }
 

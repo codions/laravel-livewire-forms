@@ -9,14 +9,17 @@ use Illuminate\View\Component;
 
 class Row extends Component
 {
-    use WithHelp, WithDisabled;
+    use WithHelp;
+    use WithDisabled;
     use WithPrefix;
 
     public $props = [];
-    public $attrs = [];
-    public $column_class = "col-md-6 mb-2 mb-md-0";
-    public $row_class = "row";
 
+    public $attrs = [];
+
+    public $column_class = 'col-md-6 mb-2 mb-md-0';
+
+    public $row_class = 'row';
 
     public static function make($label = null)
     {
@@ -43,18 +46,22 @@ class Row extends Component
         return $this;
     }
 
-    public function isColumn($field) {
+    public function isColumn($field)
+    {
         return Column::class == get_class($field);
     }
 
-    public function col_size($col="mb-2") {
+    public function col_size($col = 'mb-2')
+    {
         $this->column_class = "$col mb-2 mb-md-0";
+
         return $this;
     }
 
     public function render()
     {
         $row = $this;
+
         return view('laravel-livewire-forms::row', compact('row'));
     }
 }

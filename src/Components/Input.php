@@ -13,9 +13,16 @@ use Illuminate\View\Component;
 
 class Input extends Component
 {
-    use WithPrefix, WithSizing, WithHelp, WithModel, WithDisabled, WithReadonly, WithPlaceholder;
+    use WithPrefix;
+    use WithSizing;
+    use WithHelp;
+    use WithModel;
+    use WithDisabled;
+    use WithReadonly;
+    use WithPlaceholder;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)
@@ -51,15 +58,15 @@ class Input extends Component
 
         if ($type == 'text') {
             $this->attrs['inputmode'] = 'text';
-        } else if ($type == 'number') {
+        } elseif ($type == 'number') {
             $this->attrs['inputmode'] = 'numeric';
-        } else if ($type == 'tel') {
+        } elseif ($type == 'tel') {
             $this->attrs['inputmode'] = 'tel';
-        } else if ($type == 'search') {
+        } elseif ($type == 'search') {
             $this->attrs['inputmode'] = 'search';
-        } else if ($type == 'email') {
+        } elseif ($type == 'email') {
             $this->attrs['inputmode'] = 'email';
-        } else if ($type == 'url') {
+        } elseif ($type == 'url') {
             $this->attrs['inputmode'] = 'url';
         }
 

@@ -13,9 +13,16 @@ use Illuminate\View\Component;
 
 class Textarea extends Component
 {
-    use WithPrefix, WithSizing, WithHelp, WithModel, WithDisabled, WithReadonly, WithPlaceholder;
+    use WithPrefix;
+    use WithSizing;
+    use WithHelp;
+    use WithModel;
+    use WithDisabled;
+    use WithReadonly;
+    use WithPlaceholder;
 
     public $props = [];
+
     public $attrs = [];
 
     public static function make($name, $label = null)

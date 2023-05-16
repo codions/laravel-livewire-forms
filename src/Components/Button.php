@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class Button extends Component
 {
     public $props = [];
+
     public $attrs = [];
 
     public static function make($label = 'Submit', $style = 'primary')
