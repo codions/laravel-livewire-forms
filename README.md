@@ -80,13 +80,6 @@ class UpdateUserForm extends FormComponent
 {
     public $title = 'Update User';
     
-    public function route()
-    {
-        return Route::get('/users/update/{user}', static::class)
-            ->name('users.update')
-            ->middleware('auth');
-    }
-    
     public function mount(User $user)
     {
         $this->data = $user->toArray();
