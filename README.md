@@ -71,39 +71,6 @@ public function createUser()
 }
 ```
 
-## Full Page Forms
-
-Create a full page form by specifying a `title`, `layout` and `route` to use:
-
-```php
-class Login extends FormComponent
-{
-    public $title = 'Login';
-    public $layout = 'layouts.card';
-
-    public function route()
-    {
-        return Route::get('/login', static::class)
-            ->name('login')
-            ->middleware('guest');
-    }
-}
-```
-
-## Form Slider
-
-Create a form that slides out by specifying a `title`, `layout` and `route` to use:
-
-```php
-class Login extends FormSliderComponent
-{
-    public $title = 'Login';
-    public $layout = 'layouts.card';
-    public $btnText = 'Login';
-
-}
-```
-
 ## Setting Initial Data
 
 You can set the initial form data / defaults via the `data` array property in your component `mount` method:
@@ -124,7 +91,6 @@ class UpdateUserForm extends FormComponent
     {
         $this->data = $user->toArray();
     }
-}
 ```
 
 ## Accessing Data
@@ -153,7 +119,6 @@ Input::make('name', 'Name')->defer(), // bind on action
 Input::make('name', 'Name')->lazy(), // bind on change
 Input::make('name', 'Name')->debounce(500), // bind after 500ms delay 
 ```
-
 
 ## Sizing
 
@@ -212,26 +177,6 @@ Arrayable::make('locations', 'Locations')->fields([
 
 Available methods: `fields`, `help`, `disabled`
 
-
-
-### Bootstrap Grid
-
-A bootstrap support to the form.
-
-#### Row `($label = null)` and RowColumn `($label = null)`
-
-An array of fields display in a Bootstrap Row or Column
-
-```php
-Row::make()->fields([
-    Input::make('city')->placeholder('City'),
-    Select::make('state')->placeholder('State')->options(['FL', 'TX']),
-]),
-```
-
-Available methods: `fields`, `help`, `disabled`, `isColumn`, `col_class`
-
-
 ### Button `($label = 'Submit', $style = 'primary')`
 
 A button used for actions and links.
@@ -258,7 +203,7 @@ Checkbox::make('active', 'This user is active')->switch(),
 
 Use the `switch` method to style the checkbox as a switch.
 
-Available methods: `switch`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`
+Available methods: `switch`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`
 
 ### Checkboxes `($name, $label = null)`
 
@@ -268,7 +213,7 @@ An array of checkbox fields.
 Checkboxes::make('colors', 'Colors')->options(['Red', 'Green', 'Blue']),
 ```
 
-Available methods: `options`, `switch`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`
+Available methods: `options`, `switch`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`
 
 ### Color `($name, $label = null)`
 
@@ -278,7 +223,7 @@ A color picker field.
 Color::make('hair_color', 'Hair Color'),
 ```
 
-Available methods: `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`
+Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`
 
 ### Conditional
 
@@ -334,7 +279,7 @@ Input::make('price', 'Price')->type('number')->append('$')->prepend('.00'),
 
 The `type` method accepts a standard HTML input type. As with other inputs, use `small` or `large` to resize an input. Input fields also support appends/prepends, and even plaintext.
 
-Available methods: `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `type`, `append`, `prepend`, `plaintext`
+Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `type`, `append`, `prepend`, `plaintext`
 
 ### Radio `($name, $label = null)`
 
@@ -344,7 +289,7 @@ A radio field.
 Radio::make('gender', 'Gender')->options(['Male', 'Female']),
 ```
 
-Available methods: `options`, `switch`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`
+Available methods: `options`, `switch`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`
 
 ### Select `($name, $label = null)`
 
@@ -360,7 +305,7 @@ Select::make('color', 'Color')->options([
 Select::make('user_id', 'User')->options(User::pluck('name', 'id')->toArray()),
 ```
 
-Available methods: `options`, `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `placeholder`
+Available methods: `options`, `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `placeholder`
 
 ### Textarea `($name, $label = null)`
 
@@ -371,7 +316,7 @@ Input::make('bio', 'Biography'),
 Input::make('bio', 'Biography')->rows(5),
 ```
 
-Available methods: `small`, `large`,  `containerSize`, `help`, `instant`,  `addAttrs`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `rows`
+Available methods: `small`, `large`, `help`, `instant`, `defer`, `lazy`, `debounce`, `disabled`, `readonly`, `placeholder`, `rows`
 
 ### View `($name, $data = [])`
 
@@ -380,66 +325,6 @@ Used to render a custom Blade view inside the form.
 ```php
 View::make('custom-view', ['hello' => 'world']),
 ```
-
-
-## Sameple Example
-
-
-### Code
-
-```php
-namespace App\Http\Livewire\Clients;
-
-use Codions\LaravelLivewireForms\Components\Button;
-use Codions\LaravelLivewireForms\Components\FormComponent;
-use Codions\LaravelLivewireForms\Components\Input;
-use Codions\LaravelLivewireForms\Components\Select;
-
-class CreateClientForm extends FormComponent
-{
-    public $gridClass = 'row';
-
-    public function fields()
-    {
-        return [
-            Row::make()->fields([
-                Input::make('name', 'Name')
-                    ->placeholder('Full Name'),
-                Input::make('email', 'Email')
-                    ->type('email')
-                    ->placeholder('Email, example: user@example.com'),
-                Select::make('gender', 'Gender')
-                    ->placeholder('Gender')
-                    ->options(['Male', 'Female'])
-                    ->addAttrs(['class' => 'd-block w-full']),
-                Input::make('phone_no', 'Contact Number')
-                    ->placeholder('(xxx) xxx xxxxx'),
-                Input::make('street_address', 'Street Address'),
-                Input::make('city', 'City'),
-                Input::make('state', 'State / Parist'),
-                Input::make('country', 'Country'),
-            ])
-        ];
-    }
-
-    public function buttons()
-    {
-        return [
-            Button::make('Cancel', 'secondary')->url(route('team.index')),
-            Button::make()->click('submit'),
-        ];
-    }
-}
-```
-
-### Form View
-
-![Example Form](docs/images/sample-form.png)
-
-
-### Other Examples
-
-For more examples, read the [EXAMPLES.md](EXAMPLES.md) document.
 
 ## Credits
 - This project is a modified version of [bastinald/laravel-livewire-forms](https://github.com/bastinald/laravel-livewire-forms), created as a fork with additional changes.

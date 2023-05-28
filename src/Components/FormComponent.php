@@ -14,13 +14,6 @@ class FormComponent extends Component
 
     public $data = [];
 
-    /**
-     * CSS Class for input wrapper.
-     *
-     * @var string
-     */
-    public $gridClass = 'row';
-
     public function render()
     {
         return view('laravel-livewire-forms::form-component')
