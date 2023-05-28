@@ -8,6 +8,7 @@ use Codions\LaravelLivewireForms\Traits\WithModel;
 use Codions\LaravelLivewireForms\Traits\WithOptions;
 use Codions\LaravelLivewireForms\Traits\WithPrefix;
 use Codions\LaravelLivewireForms\Traits\WithSwitch;
+use Codions\LaravelLivewireForms\Traits\WithSizing;
 use Illuminate\View\Component;
 
 class Checkboxes extends Component
@@ -18,6 +19,7 @@ class Checkboxes extends Component
     use WithHelp;
     use WithModel;
     use WithDisabled;
+    use WithSizing;
 
     public $props = [];
 

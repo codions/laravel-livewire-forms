@@ -4,48 +4,57 @@ namespace Codions\LaravelLivewireForms\Components;
 
 use Codions\LaravelLivewireForms\Traits\WithDisabled;
 use Codions\LaravelLivewireForms\Traits\WithHelp;
-use Codions\LaravelLivewireForms\Traits\WithModel;
 use Codions\LaravelLivewireForms\Traits\WithPrefix;
-use Codions\LaravelLivewireForms\Traits\WithSwitch;
-use Codions\LaravelLivewireForms\Traits\WithSizing;
 use Illuminate\View\Component;
 
-class Checkbox extends Component
+class RowColumn extends Component
 {
-    use WithPrefix;
-    use WithSwitch;
     use WithHelp;
-    use WithModel;
     use WithDisabled;
-    use WithSizing;
+    use WithPrefix;
 
     public $props = [];
 
     public $attrs = [];
 
-    public static function make($name, $label)
+    public $column_class = 'col-md-6 mb-2 mb-md-0';
+
+    public $row_class;
+
+    public static function make($label = null)
     {
         $component = new static;
 
         $component->props = [
-            'name' => $name,
-            'label' => $label,
-            'prefix' => null,
-            'switch' => false,
+            // 'name' => $name,
+            // 'label' => $label,
+            'fields' => [],
             'help' => null,
-            'model' => '.defer',
         ];
 
         $component->attrs = [
-            'type' => 'checkbox',
             'disabled' => false,
         ];
 
         return $component;
     }
 
+    public function colSize($col = 'mb-2')
+    {
+        $this->column_class = "$col mb-2 mb-md-0";
+
+        return $this;
+    }
+
+    public function fields($fields = [])
+    {
+        $this->props['fields'] = $fields;
+
+        return $this;
+    }
+
     public function render()
     {
-        return view('laravel-livewire-forms::checkbox');
+        return view('laravel-livewire-forms::column');
     }
 }

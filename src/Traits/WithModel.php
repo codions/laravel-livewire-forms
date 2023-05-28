@@ -2,6 +2,8 @@
 
 namespace Codions\LaravelLivewireForms\Traits;
 
+use Illuminate\Support\Arr;
+
 trait WithModel
 {
     public function instant()
@@ -28,6 +30,20 @@ trait WithModel
     public function debounce($ms = 500)
     {
         $this->props['model'] = '.debounce.' . $ms . 'ms';
+
+        return $this;
+    }
+
+    /**
+     * Add attributes to the input field.
+     *
+     * @return mixed|Illuminate\View\Component    Return the current object.
+     */
+    public function addAttrs(array $attrs)
+    {
+        if (Arr::isAssoc($attrs)) {
+            $this->attrs = array_merge($this->attrs, $attrs);
+        }
 
         return $this;
     }
