@@ -11,7 +11,7 @@
 
         <x-slot name="content">
             @section('title', __($title))
-            <div  class="{{ $gridClass }} row" >
+            <div  class="{{ $gridClass ?? '' }} row" >
                 @foreach($this->fields() as $field)
                     {{ $field->render()->with($field->data()) }}
                 @endforeach

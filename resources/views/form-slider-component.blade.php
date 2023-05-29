@@ -13,7 +13,7 @@
                 </button>
 
                 @section('title', __($title))
-                <form  class="{{ $gridClass }}" >
+                <form  class="{{ $gridClass ?? '' }}" >
                     @foreach($this->fields() as $field)
                         {{ $field->render()->with($field->data()) }}
                     @endforeach

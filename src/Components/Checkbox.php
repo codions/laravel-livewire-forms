@@ -6,8 +6,8 @@ use Codions\LaravelLivewireForms\Traits\WithDisabled;
 use Codions\LaravelLivewireForms\Traits\WithHelp;
 use Codions\LaravelLivewireForms\Traits\WithModel;
 use Codions\LaravelLivewireForms\Traits\WithPrefix;
-use Codions\LaravelLivewireForms\Traits\WithSwitch;
 use Codions\LaravelLivewireForms\Traits\WithSizing;
+use Codions\LaravelLivewireForms\Traits\WithSwitch;
 use Illuminate\View\Component;
 
 class Checkbox extends Component
