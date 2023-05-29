@@ -28,7 +28,6 @@ class Input extends Component
     public static function make($name, $label = null)
     {
         $component = new static;
-
         $component->props = [
             'name' => $name,
             'label' => $label,
@@ -41,7 +40,6 @@ class Input extends Component
             'help' => null,
             'model' => '.defer',
         ];
-
         $component->attrs = [
             'type' => 'text',
             'inputmode' => 'text',
@@ -56,18 +54,31 @@ class Input extends Component
     {
         $this->attrs['type'] = $type;
 
-        if ($type == 'text') {
-            $this->attrs['inputmode'] = 'text';
-        } elseif ($type == 'number') {
-            $this->attrs['inputmode'] = 'numeric';
-        } elseif ($type == 'tel') {
-            $this->attrs['inputmode'] = 'tel';
-        } elseif ($type == 'search') {
-            $this->attrs['inputmode'] = 'search';
-        } elseif ($type == 'email') {
-            $this->attrs['inputmode'] = 'email';
-        } elseif ($type == 'url') {
-            $this->attrs['inputmode'] = 'url';
+        switch ($type) {
+            case 'text':
+                $this->attrs['inputmode'] = 'text';
+
+                break;
+            case 'number':
+                $this->attrs['inputmode'] = 'numeric';
+
+                break;
+            case 'tel':
+                $this->attrs['inputmode'] = 'tel';
+
+                break;
+            case 'search':
+                $this->attrs['inputmode'] = 'search';
+
+                break;
+            case 'email':
+                $this->attrs['inputmode'] = 'email';
+
+                break;
+            case 'url':
+                $this->attrs['inputmode'] = 'url';
+
+                break;
         }
 
         return $this;
