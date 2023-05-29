@@ -6,11 +6,11 @@
     }
 @endphp
 
-<div class="{{ $row_class }}">
+<fieldset class="{{ $row_class }}">
     @isset($props['label'])
-        <label class="form-label">
+        <legend>
             {{ __($props['label']) }}
-        </label>
+        </legend>
     @endisset
     @foreach($props['fields'] as $field)
         @if ( !method_exists($field, 'prefix') )
@@ -21,4 +21,4 @@
             </div>
         @endif
     @endforeach
-</div>
+</fieldset>

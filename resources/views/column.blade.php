@@ -12,7 +12,7 @@
             {{ $field->render()->with($field->data()) }}
         @else
             <div class="{{ $field->getColClass() ?? 'col-md-6'}} mb-3">
-                {{ $field->prefix(rtrim($name, "."))->render()->with($field->data()) }}
+                {{ $field->render()->with($field->data()) }}
             </div>
         @endif
     @endforeach
