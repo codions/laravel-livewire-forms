@@ -5,6 +5,7 @@ namespace Codions\LaravelLivewireForms\Components;
 use Codions\LaravelLivewireForms\Traits\WithDisabled;
 use Codions\LaravelLivewireForms\Traits\WithHelp;
 use Codions\LaravelLivewireForms\Traits\WithPrefix;
+use Codions\LaravelLivewireForms\Traits\WithSizing;
 use Illuminate\View\Component;
 
 class File extends Component
@@ -12,6 +13,7 @@ class File extends Component
     use WithPrefix;
     use WithHelp;
     use WithDisabled;
+    use WithSizing;
 
     public $props = [];
 
