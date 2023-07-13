@@ -4,6 +4,7 @@
         {{ __($btnText) }}
     </button>
 <form wire:submit.prevent="submit" class="d-inline-block ml-2 mt-sm--3">
+    {{--
     <x-jet-dialog-modal wire:model="modalFormVisible">
         <x-slot name="title">
             {{ $title }}
@@ -24,5 +25,6 @@
             @endforeach
         </x-slot>
     </x-jet-dialog-modal>
+     --}}
 </form>
 </div>

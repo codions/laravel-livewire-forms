@@ -4,12 +4,14 @@ namespace Codions\LaravelLivewireForms\Components;
 
 use Codions\LaravelLivewireForms\Traits\WithHelp;
 use Codions\LaravelLivewireForms\Traits\WithPrefix;
+use Codions\LaravelLivewireForms\Traits\WithSizing;
 use Illuminate\View\Component;
 
 class Fieldset extends Component
 {
     use WithHelp;
     use WithPrefix;
+    use WithSizing;
 
     public $props = [];
 
